@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	int t,i,j;
+
+	scanf("%d",&t);
+	int mm[26];
+
+	for(i=0;i<t;i++)
+	{
+		int n,count=0,k,l;
+		char s[100020];
+		scanf("%s",s);
+		scanf("%d",&n);
+
+for(j=0;j<26;j++)
+		mm[j]=0;
+
+
+		for(j=0;s[j]!='\0';j++)
+		{
+			l=(int)s[j];
+			mm[l-97]=mm[l-97]+1;
+			//printf("lll-%d\n",l);
+		}
+        for(j=0;j<26;j++)
+			if(mm[j]>0)
+			 {
+			 	count=count+mm[j]-1;
+			 	//printf("c111---%d\n",count);
+			 }
+		if(count<=n)
+			printf("YES\n");
+		else
+			printf("NO\n");
+
+		//for(j=0;j<26;j++)
+		//printf("-%d ",mm[j]);
+
+		//printf("\nc-%d\n",count);
+    }
+    return 0;
+}
